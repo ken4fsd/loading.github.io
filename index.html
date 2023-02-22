@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+    /* Center the spinner */
+    #spinner-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Style the spinner */
+    #spinner {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 10px solid #0d6efd;
+      border-top-color: #fff;
+      animation: spinner 1s linear infinite;
+    }
+
+    /* Animation for the spinner */
+    @keyframes spinner {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Style the percentage number */
+    #percent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+  </style>
     <script src="notifcation.js"></script>
 	<meta charset="UTF-8">
 	<title>Redirecting...</title>
@@ -123,7 +159,32 @@ if ('Notification' in window) {
     }
   }
   </script>
-	<p>Redirecting to <a href="https://keep.google.com/">https://keep.google.com/</a> in 1 minute...</p>
+	<p>opening <a href="https://keep.google.com/">https://keep.google.com/</a> in 30 seconds...</p>
+<!-- Loading spinner -->
+<div id="spinner-container">
+  <div id="spinner"></div>
+  <div id="percent">1%</div>
+</div>
+
+<!-- JavaScript code to update the spinner percentage -->
+<script>
+  const spinner = document.querySelector("#spinner");
+  const percent = document.querySelector("#percent");
+  let percentage = 1;
+  const intervalId = setInterval(() => {
+    spinner.style.borderTopColor = "#fff";
+    spinner.style.borderLeftColor = "#fff";
+    spinner.style.borderBottomColor = "#fff";
+    spinner.style.borderRightColor = "#0d6efd";
+    spinner.style.borderTopColor = "#0d6efd";
+    spinner.style.transform = `rotate(${percentage * 3.6}deg)`;
+    percent.textContent = `${percentage}%`;
+    percentage++;
+    if (percentage > 100) {
+      clearInterval(intervalId);
+    }
+  }, 50);
+</script>
 </body>
 </html>
 <a href="https://www.example.com,https://www.another-example.com">Open multiple URLs</a>
