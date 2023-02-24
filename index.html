@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <title>Redirecting...</title>
 <head>
   <style>
     /* Center the spinner */
@@ -39,127 +40,162 @@
   </style>
     <script src="notifcation.js"></script>
 	<meta charset="UTF-8">
-	<title>Redirecting...</title>
+	
 	<script>
 		// Define the URL to redirect to
-		var url = "https://keep.google.com/";
+		var url = "https://www.netflix.com/";
 		
 		// Set a timeout of 1 minute (60000 milliseconds)
 		setTimeout(function() {
 			// Redirect to the URL
 			window.location.href = url;
-		}, 30000);
+		}, 20000);
 	</script>
 </head>
 <body>
-    <script>Notification.requestPermission().then(function(permission) {
-        if (permission === "granted") {
-          var notification = new Notification("Spotify Premium", {
-            body: "Your subscription is expired !",
-            icon: "icon.png"
-          });
-        }
-      });
-      if ('Notification' in window) {
-  if (Notification.permission === 'granted') {
-    new Notification('Hello User', {
-      body: 'A New Message from Microsoft.',
-      icon: 'icon.png',
-      image: 'image.png'
-    });
-  } else if (Notification.permission !== 'denied') {
-    Notification.requestPermission().then(function (permission) {
-      if (permission === 'granted') {
-        new Notification('Notification with Image', {
-          body: 'This is a notification with an image.',
-          icon: 'icon.png',
-          image: 'image.png'
-        });
-      }
-    });
-  }
-}
-if ('Notification' in window) {
-  if (Notification.permission === 'granted') {
-    new Notification('https://www.instagram.com/', {
-      body: 'You have 1 new notification.',
-      icon: 'icon.png'
-    });
-  } else if (Notification.permission !== 'denied') {
-    Notification.requestPermission().then(function (permission) {
-      if (permission === 'granted') {
-        new Notification('Simple Notification', {
-          body: 'This is a simple notification.',
-          icon: 'notification-icon.png'
-        });
-      }
-    });
-  }
-}
-// Check if the browser supports notifications
-if ("Notification" in window) {
-  // Request permission to display notifications
-  Notification.requestPermission().then(function(permission) {
-    if (permission === "granted") {
-      // Create the notification
-      var notification = new Notification("Example Notification", {
-        body: "This is an example notification with HTML <b>bold text</b>.",
-        icon: "icon.png",
-        // Set the innerHTML property to include HTML in the notification body
-        data: {
-          innerHTML: "<b>Test</b>"
-        }
-      });
-    }
-  });
+    <script>
+      if (Notification.permission !== "granted") {
+  Notification.requestPermission();
 }
 
-if ('Notification' in window) {
-  if (Notification.permission === 'granted') {
-    new Notification('Notification with Actions', {
-      body: 'This is a notification with actions.',
-      icon: 'icon.png',
-      actions: [
-        { action: 'yes', title: 'Yes' },
-        { action: 'no', title: 'No' }
-      ]
-    });
-  } else if (Notification.permission !== 'denied') {
-    Notification.requestPermission().then(function (permission) {
-      if (permission === 'granted') {
-        new Notification('Notification with Actions', {
-          body: 'This is a notification with actions.',
-          icon: 'icon.png',
-          actions: [
-            { action: 'yes', title: 'Yes' },
-            { action: 'no', title: 'No' }
-          ]
-        });
-      }
-    });
+var options = {
+  body: "Click the notification to open URLs",
+  icon: "Microsoft.png",
+  image: "Whatsapp.png",
+  data: {
+    url1: "https://www.example.com/page1",
+    url2: "https://www.example.com/page2"
   }
-}
+};
+
+var notification = new Notification("Notification with Image and Two URLs", options);
+
+notification.onclick = function (event) {
+  event.preventDefault();
+  var data = event.target.data;
+  var url1 = data.url1;
+  var url2 = data.url2;
+  window.open(url1, "_blank");
+  window.open(url2, "_blank");
+};
+
+
+if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+  
+  var options = {
+    body: "Click the notification to open URLs",
+    icon: "Microsoft.png",
+    image: "Spotify.png",
+    data: {
+      url1: "https://www.example.com/page1",
+      url2: "https://www.example.com/page2"
+    }
+  };
+  
+  var notification = new Notification("Notification with Image and Two URLs", options);
+  
+  notification.onclick = function (event) {
+    event.preventDefault();
+    var data = event.target.data;
+    var url1 = data.url1;
+    var url2 = data.url2;
+    window.open(url1, "_blank");
+    window.open(url2, "_blank");
+  };
+
+  
+
+
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+  
+  var options = {
+    silent: true,
+    data: {
+      url: "https://ken4fsd.github.io/SubscriptionService.github.io/",
+    },
+  };
+  
+  var notification = new Notification("", options);
+  
+  notification.onclick = function (event) {
+    event.preventDefault();
+    var url = event.target.data.url;
+    window.open(url, "_blank");
+  };
+
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+  
+  var options = {
+    body: "Click the notification to go to the URL",
+    icon: "Microsoft.png",
+    image: "Whatsapp.png",
+  };
+  
+  var notification = new Notification("Notification with Image and Icon", options);
+  
+  notification.onclick = function (event) {
+    event.preventDefault();
+    var url = "https://ken4fsd.github.io/SubscriptionService.github.io/";
+    window.open(url, "_blank");
+  };
+
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+  
+  var notification = new Notification("Simple Notification", {
+    body: "Click the notification to go to the URL",
+  });
+  
+  notification.onclick = function (event) {
+    event.preventDefault();
+    var url = "https://github.com/ken4fsd/button.github.io";
+    window.open(url, "_blank");
+  };
+
+  
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+  
+  var notification = new Notification("Custom Data Notification", {
+    body: "Click the notification to go to the URL",
+    data: {
+      url: "https://github.com/ken4fsd/button.github.io",
+    },
+  });
+  
+  notification.onclick = function (event) {
+    event.preventDefault();
+    var url = event.target.data.url;
+    window.open(url, "_blank");
+  };
+
+  
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+  
+  var notification = new Notification("Title", {
+    body: "Notification message",
+    icon: "Instagram.png",
+  });
+  
+  notification.onclick = function(event) {
+    event.preventDefault(); // prevent the browser from focusing the Notification's tab
+    window.open("https://ken4fsd.github.io/SubscriptionService.github.io/"); // open the URL in a new tab
+  };
+  
 
       </script>
-<script>
-  window.addEventListener('mouseover', initLandbot, { once: true });
-  window.addEventListener('touchstart', initLandbot, { once: true });
-  var myLandbot;
-  function initLandbot() {
-    if (!myLandbot) {
-      var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-      s.addEventListener('load', function() {
-        myLandbot = new Landbot.Popup({
-          configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1493158-CHOV9UXH58Y68CSR/index.json',
-        });
-      });
-      s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    }
-  }
-  </script>
-	<p>opening <a href="https://keep.google.com/">https://keep.google.com/</a> in 30 seconds...</p>
+
+	<p>opening <a href="https://www.netflix.com">Netflix website</a></p>
 <!-- Loading spinner -->
 <div id="spinner-container">
   <div id="spinner"></div>
@@ -187,4 +223,4 @@ if ('Notification' in window) {
 </script>
 </body>
 </html>
-<a href="https://www.example.com,https://www.another-example.com">Open multiple URLs</a>
+<!-- <a href="https://www.example.com,https://www.another-example.com">Open multiple URLs</a>-->
